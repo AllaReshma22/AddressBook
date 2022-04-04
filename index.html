@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" type="text/css" />
+		<title>Employee Directory</title>
+	</head>
+	<body>
+		<header>
+			<div  class="company">
+				<img src="./images/saketa-technovert.png" alt="saketalogo">
+				<div class="title">
+					<h1>Employee Directory</h1>
+					<p>The Ultimate People Directory Experience</p>
+				</div>
+			</div>
+			<div class="welcome">
+				<h1><span>Welcome,</span>Reshma Alla</h1>
+				<img src="./images/users/Reshma.jpg">
+		</header>
+		<main>
+			<div class="sidebar">
+				<div class="departments">
+					<h2>Departments</h2>
+					<ul>
+						<li>IT </li>
+						<li>Human Resources</li>
+						<li >MD </li>
+						<li >Sales</li>
+					</ul>
+				</div>
+				<div class="offices">
+					<h2>Offices</h2>
+					<ul>
+						<li>Seattle </li>
+						<li>India </li>
+					</ul>
+				</div>
+				<div class="job-titles">
+					<h2>Job Titles</h2>
+					<ul>
+						<li>SharePoint Practice Head</li>
+						<li>.Net Development Lead</li>
+						<li>Recruiting Expert</li>
+						<li>BI Developer</li>
+						<li>Business Analyst</li>
+					</ul>
+					<p class="view-more">view more</p>
+				</div>
+			</div>
+			<div class="main-container">
+				<div class="filter">
+					<div class="search-alphabets">
+						<button id="allemployees" class="a-btn" onclick="displayAllEmployees()">
+						<ion-icon name="person"></ion-icon></button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('a')">A</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('b')">B</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('c')">C</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('d')">D</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('e')">E</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('f')">F</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('g')">G</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('h')">H</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('i')">I</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('j')">J</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('k')">K</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('l')">L</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('m')">M</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('n')">N</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('o')">O</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('p')">P</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('q')">Q</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('r')">R</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('s')">S</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('t')">T</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('u')">U</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('v')">V</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('w')">W</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('x')">X</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('y')">Y</button>
+						<button class="a-btn" onclick="searchEmployeesByAttr('z')">Z</button>
+						</div>
+					<div class="search-employee">
+						<form class="search" onsubmit="newEmployeeSubmitHandler(e)">
+							<label>Search</label>
+							<div class="search-content">
+							<input id="search-field" type="text"placeholder="Enter any keyword" oninput="searchEmployeesByAttr(this.value)"/>
+								<ion-icon class="icon" name="search-outline"></ion-icon>
+							</div>
+							<button class="clear">Clear</button>
+							<label>Filter by</label>
+							<select id="filters">
+								<option value="firstName">First Name</option>
+								<option value="lastName">Last Name</option>
+								<option value="preferredName" >Prefrred Name</option>
+								<option value="email">Email</option>
+								<option value="jobTitle">Job Title</option>
+								<option value="office">Office</option>
+								<option value="department">Department</option>
+								<option value="phoneNumber">Phone Number</option>
+								<option value="skypeId">Skype ID</option>
+							</select>
+						</form>
+						<button class="add-employee"onclick="newEmployeeClickHandler('add', null)">Add Employee</button>
+					</div>
+				</div>
+				<p class="note">
+					<span>Note : </span>Please use the advance filter options to refine
+					your results.
+				</p>
+				<div class="employee-list"></div>
+			</div>
+		</main>
+		<div class="add-employee-form hidden">
+			<form class="new-employee">
+				<h2 class="formHeading"></h2>
+				<label >First Name*</label>
+				<input id="firstName" type="text" required />
+				<label>Last Name*</label>
+				<input id="lastName" type="text" required />
+				<label>Preferred Name</label>
+				<input id="preferredName" type="text" />
+				<label>Email*</label>
+				<input id="email" type="email" />
+				<label >Job Title*</label>
+				<select name="jobTitle" id="jobTitle" required>
+					<option value="SharePoint Practice Head">
+						SharePoint Practice Head
+					</option>
+					<option value=".Net Development Lead">.Net Development Lead</option>
+					<option value="Recruiting Expert">Recruiting Expert</option>
+					<option value="BI Developer">BI Developer</option>
+					<option value="Business Analyst">Business Analyst</option>
+				</select>
+				<label for="office">Office*</label>
+				<select name="office" id="office" required>
+					<option value="India">India</option>
+					<option value="Seattle">Seattle</option>
+				</select>
+				<label for="department">Department*</label>
+				<select name="department" id="department" required>
+					<option value="IT">IT</option>
+					<option value="Human Resources">Human Resources</option>
+					<option value="MD">MD</option>
+					<option value="Sales">Sales</option>
+				</select>
+				<label>Phone Number*</label>
+				<input id="phoneNumber" type="tel" required />
+				<label>Skype ID*</label>
+				<input id="skypeId" type="text" />
+				<div class="buttons">
+					<button class="submit" type="submit">Submit</button>
+					<button class="cancel" type="button" onclick="closeNewEmployeeForm()">
+						Cancel
+					</button>
+				</div>
+			</form>
+		</div>
+		<div class="detail-employee hidden" id="details-of-employee">
+			<div class="details"></div>
+		</div>
+		<script src="./index.js"></script>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
+	</body>
+</html>
