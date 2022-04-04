@@ -133,9 +133,9 @@ const searchEmployeesByAttr = (val) => {
 	employeeList.innerHTML = getHtmlForEmployeeList();
 };
 const newEmployeeClickHandler = (addOrEdit, empId) => {
-	let backdrop = document.querySelector('.add-employee-form');
-	backdrop.classList.remove('hidden');
-	backdrop.classList.add('visible');
+	let addEmployeeForm = document.querySelector('.add-employee-form');
+	addEmployeeForm.classList.remove('hidden');
+	addEmployeeForm.classList.add('visible');
 	let heading = document.querySelector('.formHeading');
 	let form = document.querySelector('.new-employee');
 	if (addOrEdit == 'add') {
