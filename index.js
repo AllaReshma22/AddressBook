@@ -16,6 +16,11 @@ let employees = [
 ];
 
 let displayEmployees = employees; // list of employees that are being displayed
+const displayAllEmployees = () => {
+	displayEmployees = employees;
+	employeeList = document.querySelector('.employee-list');
+	employeeList.innerHTML = getHtmlForEmployeeList();
+};
 const getHtmlForEmployeeList = () => {
 	var finalHtml = '';
 	for (i in displayEmployees) {
@@ -127,13 +132,6 @@ const searchEmployeesByAttr = (val) => {
 	employeeList = document.querySelector('.employee-list');
 	employeeList.innerHTML = getHtmlForEmployeeList();
 };
-
-const displayAllEmployees = () => {
-	displayEmployees = employees;
-	employeeList = document.querySelector('.employee-list');
-	employeeList.innerHTML = getHtmlForEmployeeList();
-};
-
 const newEmployeeClickHandler = (addOrEdit, empId) => {
 	let backdrop = document.querySelector('.add-employee-form');
 	backdrop.classList.remove('hidden');
