@@ -139,7 +139,7 @@ const newEmployeeClickHandler = (addOrEdit, empId) => {
 	let heading = document.querySelector('.formHeading');
 	let form = document.querySelector('.new-employee');
 	if (addOrEdit == 'add') {
-		heading.innerHTML = 'Add new employee';
+		heading.innerHTML = '    Add new employee';
 		form.id = 'add';
 	} else if (addOrEdit == 'edit') {
 		heading.innerHTML = 'Edit Employee Details';

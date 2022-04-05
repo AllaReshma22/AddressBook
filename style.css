@@ -21,22 +21,25 @@ header {
 .title h1{
     color: #66CEFD;
     font-weight: lighter;
+	font-size: 3em;
 }
 .title p{
+	margin-top: -6%;
     font-size: 1.2em;
 }
 .welcome{display:flex;}
 .welcome h1{
-   
-    font-size: 1.5em;
+   margin-top: 20%;
+    font-size: 1.8em;
     font-weight: lighter;
 }
 .welcome span{
     color:#66CEFD ;
 }
 .welcome img {
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
+	margin-top: 7%;
 }
 
 main {
@@ -69,10 +72,6 @@ main {
 .view-more {
 	color: #00b0fd;
 	font-size: 0.85em;
-}
-.view-more:hover {
-	cursor: pointer;
-	text-decoration: underline;
 }
 .main-container{
 	margin-top: 1%;
@@ -129,6 +128,7 @@ label {
     border: none;
     width:3.5em;
     height:3.5em;
+	margin-bottom: 1%;
 }
 .note {
 	margin: 1% 0;
@@ -275,6 +275,9 @@ p {
 	padding: 2% 0 1% 0;
 	border: 1px solid #606060;
 }
+.new-employee h2{
+	margin-left: 14%;
+}
 
 .new-employee label {
 	margin: 0 auto 1% 14%;
@@ -283,23 +286,24 @@ p {
 
 .new-employee select {
 	margin: 0 auto 1% 14%;
-	width: 50%;
+	width: 60%;
 	height: 20px;
 }
 
 .new-employee input {
-	width: 70%;
+	width: 60%;
 	margin-bottom: 2%;
-	margin-left: 2%;
+	margin-left: 14%;
 	border: 1px solid #737373;
 	height: 20px;
 }
 
 .buttons {
-	width: 50%;
+	width: 60%;
 	display: flex;
 	justify-content: space-around;
 	margin-top: 1%;
+	margin-left: 14%;
 }
 
 .buttons .submit {
@@ -385,14 +389,13 @@ p {
 	}
 }
 @media only screen and (max-width: 850px) {
-	.brand img {
+	.company img {
 		width: 200px;
 	}
 
 	header {
 		display: block;
 	}
-
 	.company {
 		display: block;
 		text-align: center;
@@ -410,6 +413,21 @@ p {
 
 	.new-employee {
 		width: 80%;
+	}
+	.title{
+		margin-top: -3%;
+	}
+	.title p{
+		margin-top: -1%;
+	}
+	.welcome{
+		margin-top: -1%;
+	}
+	.welcome  img{
+		width:50px;
+		height: 50px;
+		margin-top: 60%;
+
 	}
 }
 
