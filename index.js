@@ -146,7 +146,7 @@ const newEmployeeClickHandler = (addOrEdit, empId) => {
 		let detailsEmployee = document.querySelector('#details-of-employee');
 		detailsEmployee.classList.remove('visible');
 		detailsEmployee.classList.add('hidden');
-		let employee = employees.find((emp) => emp.id === empId);
+		let employee = employees.find((emp) => emp.id == empId);
 		form.id = empId;
 		form[0].value = employee.firstName;
 		form[1].value = employee.lastName;
@@ -188,7 +188,7 @@ const newEmployeeSubmitHandler = (e) => {
 		i = employees.findIndex((emp) => emp.id == e.target.id);
 		employees[i].firstName = e.target[0].value;
 		employees[i].lastName = e.target[1].value;
-		if (e.target[2].value === '' || e.target[2].value == null) {
+		if (e.target[2].value == '' || e.target[2].value == null) {
 			employees[i].preferredName =
 				e.target[0].value + ' ' + e.target[1].value;
 		} else {
@@ -211,7 +211,7 @@ let detailBackdrop = document.querySelector('#details-of-employee');
 newEmployeeForm.addEventListener('submit', (e) => newEmployeeSubmitHandler(e));
 detailBackdrop.addEventListener('click', (e) => closeEmployeeDetails(e));
 const openEmployeeDetails = (ele) => {
-	let employee = employees.find((emp) => emp.id === ele.id);
+	let employee = employees.find((emp) => emp.id == ele.id);
 	let employeeDetailsHtml = getHtmlForEmployeeDetails(employee);
 	let employeeDetails = document.querySelector('#details-of-employee');
 	let details = document.querySelector('.details');
@@ -225,4 +225,18 @@ const closeEmployeeDetails = (e) => {
 		employeeDetails.classList.remove('visible');
 		employeeDetails.classList.add('hidden');
 	}
+};
+const filterEmployee=(attr,val)=>{
+	if(attr=='dept'){
+		displayEmployees=employees.filter((emp)=>emp.department==val);
+	}
+	else if(attr=='office'){
+		displayEmployees=employees.filter((emp)=>emp.office==val);
+	}
+	else if(attr=='jobTitle'){
+		displayEmployees=employees.filter((emp)=>emp.jobTitle==val);
+	}
+	employeeList = document.querySelector('.employee-list');
+	employeeList.innerHTML = getHtmlForEmployeeList();
+
 };
